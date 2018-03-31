@@ -1,0 +1,11 @@
+.square-container {
+  height: 12.5%;
+  width: 12.5%;
+}
+
+.board {
+  heigth: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
