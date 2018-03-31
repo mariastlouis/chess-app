@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import Board from '../Board/Board'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <p className="App-intro">
-          Beginning file structure for chess app
-        </p>
+        <Board knightPosition={[1, 0]}/>
       </div>
     );
   }
