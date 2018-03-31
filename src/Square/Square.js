@@ -5,7 +5,7 @@ import Piece from '../Piece/Piece'
 
 const Square = () => {
 
-let color = "blue"
+let color = "white"
 
   return (
     <div className = "Square">
