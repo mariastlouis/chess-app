@@ -1,0 +1,27 @@
+{
+  "name": "chess-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-scripts": "1.1.1",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "node-sass-chokidar": "0.0.3"
+  },
+  "scripts": {
+    "start": "npm run build-css && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "eslint": "./node_modules/eslint/bin/eslint.js ./src/*/*.js ./src/*.js"
+  },
+  "devDependencies": {
+    "enzyme": "^3.2.0",
+    "eslint": "^4.12.1",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.5.1"
+  }
+}
