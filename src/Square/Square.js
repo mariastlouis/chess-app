@@ -1,10 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Square.css'
+import Piece from '../Piece/Piece'
 
 const Square = () => {
+
+let color = "blue"
+
   return (
     <div className = "Square">
-      <p> Square component </p>
+      <div className = {`oneSquare ${color}`}>
+        <Piece />
+      </div>
     </div>
   );
 };
