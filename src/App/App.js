@@ -6,13 +6,21 @@ class App extends Component {
   constructor () {
     super();
     this.state = {
-      knightPosition:[0,0]
+      knightPosition:[6,6]
     };
     this.setSquare = this.setSquare.bind(this);
   }
 
   setSquare(x,y){
-   this.setState({knightPosition: [x, y]})
+    const [knightX, knightY] = this.state.knightPosition
+    const moveX = Math.abs(x - knightX);
+    const moveY = Math.abs(y - knightY);
+
+    if((moveX === 2 && moveY === 1) || (moveX === 1 && moveY === 2) ){
+      this.setState({knightPosition: [x, y]})
+    } else {
+      console.log('invalid move')
+    }
   }
 
   render() {

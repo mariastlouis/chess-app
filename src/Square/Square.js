@@ -7,8 +7,6 @@ const Square = ({squareColor, knightPosition, squareX, squareY, setSquare}) => {
 
 const color = squareColor ? 'white' : 'gray'
 
-
-
 const displayPiece = () => {
    const [knightX, knightY] = knightPosition;
     const piece = (squareX === knightX && squareY === knightY) ?
