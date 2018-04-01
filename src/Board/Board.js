@@ -5,8 +5,7 @@ import Square from '../Square/Square'
 import Piece from '../Piece/Piece'
 
 
-const Board = ({knightPosition}) => {
-
+const Board = ({knightPosition, setSquare}) => {
   const displaySquare = (i) => {
     const x = i % 8;
     const y = Math.floor(i / 8)
@@ -22,7 +21,8 @@ const Board = ({knightPosition}) => {
         <Square squareColor = {squareColor}
                 knightPosition = {knightPosition}
                 squareX = {x}
-                squareY = {y}/>
+                squareY = {y}
+                setSquare = {setSquare}/>
        </div>
     )
   }

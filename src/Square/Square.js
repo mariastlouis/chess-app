@@ -3,16 +3,14 @@ import PropTypes from 'prop-types';
 import './Square.css'
 import Piece from '../Piece/Piece'
 
-const Square = ({squareColor, knightPosition, squareX, squareY}) => {
+const Square = ({squareColor, knightPosition, squareX, squareY, setSquare}) => {
 
-const color = squareColor ? 'white' : 'black'
+const color = squareColor ? 'white' : 'gray'
+
+
 
 const displayPiece = () => {
    const [knightX, knightY] = knightPosition;
-   console.log('knightX', knightX)
-   console.log('squareX', squareX)
-   console.log('knightY', knightY)
-   console.log('squareY', squareY)
     const piece = (squareX === knightX && squareY === knightY) ?
     <Piece /> : null;
   return piece;
@@ -22,7 +20,9 @@ const displayPiece = () => {
 
     <div className = "Square">
       <div className = {`oneSquare ${color}`}>
-        <div className = "piece-container">
+        <div 
+        className = "piece-container"
+        onClick={ () => setSquare(squareX, squareY)}>
           {displayPiece()}
         </div>   
 
