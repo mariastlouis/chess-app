@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Board from '../Board/Board'
+import Board from '../Board/Board';
+import ControlPanel from '../ControlPanel/ControlPanel'
+
 
 class App extends Component {
   constructor () {
@@ -8,13 +10,10 @@ class App extends Component {
     this.state = {
       knightPosition:[1,7],
       bishopPosition: [2, 7],
-      selectedPiece: ''
+      selectedPiece: '',
+      message: ''
     };
     this.setSquare = this.setSquare.bind(this);
-  }
-
-  selectPiece(type) {
-    console.log(type)
   }
 
   checkSelectedPiece(x, y) {
@@ -41,8 +40,9 @@ class App extends Component {
 
     if((moveX === 2 && moveY === 1) || (moveX === 1 && moveY === 2) ){
       this.setState({knightPosition: [x, y]})
+      this.setState({message: ''})
     } else {
-      console.log('invalid move')
+      this.setState({message: 'Invalid move -- knights can only move in an L shape'})
     }
   }
 
@@ -53,16 +53,11 @@ class App extends Component {
 
     if(moveX === 1 && moveY === 1) {
       this.setState({bishopPosition: [x, y]})
+      this.setState({message: ''})
     } else {
-      console.log('invalid move')
+       this.setState({message: 'Invalid move - bishops can only move diagonally'})
     }
   }
-
-// first time you click on a square it selects the piece if it can.
-// next time you click a square it moves
-
-// click on a knight or bishop to select it
-// once selected - then click on a square and move that selected piece if it is valid and if it doesn't hit another piece
 
   setSquare (x, y) {
     const [knightX, knightY] = this.state.knightPosition;
@@ -72,23 +67,26 @@ class App extends Component {
       this.setState({selectedPiece: 'knight'})
     } else if (bishopX === x && bishopY === y ){
       this.setState({selectedPiece: 'bishop'})
-      // checkBishopPosition(x,y)
     } else {
       this.checkSelectedPiece(x, y)
   }
 }
 
   render() {
-   
-
     return (
-      <div className="App">
-        <Board 
-        knightPosition={this.state.knightPosition}
-        bishopPosition = {this.state.bishopPosition}
-        setSquare = {this.setSquare}
-        chessPiece = {this.state.selectedPiece}
-        selectPiece = {this.selectPiece}/>
+      <div className="app">
+        <div className = "game-board">
+          <Board 
+          knightPosition={this.state.knightPosition}
+          bishopPosition = {this.state.bishopPosition}
+          setSquare = {this.setSquare}
+          chessPiece = {this.state.selectedPiece}
+          selectPiece = {this.selectPiece}/>
+        </div>
+        <div className = "sider">
+          <ControlPanel message = {this.state.message}
+                        chessPiece = {this.state.selectedPiece}/>
+        </div>
       </div>
     );
   }

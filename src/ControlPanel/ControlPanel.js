@@ -8,14 +8,20 @@ import PropTypes from 'prop-types';
 
 const ControlPanel = ({message, chessPiece}) => {
 
-  // const selectedPiece = () => {
-  //   return chessPiece 
-  // }
+  const selectedPieceMessage = () => {
+    if (chessPiece === 'knight') {
+      return 'Knight selected'
+    } else if (chessPiece === 'bishop') {
+      return 'Bishop selected'
+    } else {
+      return 'Select a piece to play'
+    }
+  }
 
   return (
     <div className = "ControlPanel">
-     <h1> {chessPiece} </h1>
-     <p> {message} </p>
+      <h1>{selectedPieceMessage()} </h1>
+      <h2> {message} </h2>
     </div>
   );
 };

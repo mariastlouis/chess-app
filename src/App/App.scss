@@ -1,1 +1,14 @@
 @import 'variable';
+
+.app {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-board {
+  width: 70%;
+}
+
+.sider {
+  width: 30%;
+}
