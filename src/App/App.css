@@ -2,3 +2,13 @@
 @import url("https://fonts.googleapis.com/css?family=Cabin");
 body {
   font-family: "Cabin", sans-serif; }
+
+.app {
+  display: flex;
+  flex-direction: row; }
+
+.game-board {
+  width: 70%; }
+
+.sider {
+  width: 30%; }
