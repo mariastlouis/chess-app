@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 
 
 const ControlPanel = ({message, chessPiece}) => {
+  console.log(chessPiece)
+
 
   const selectedPieceMessage = () => {
     if (chessPiece === 'knight') {
@@ -14,7 +16,7 @@ const ControlPanel = ({message, chessPiece}) => {
     } else if (chessPiece === 'bishop') {
       return 'Bishop selected'
     } else {
-      return 'Click on a piece to play'
+      return 'Select a piece'
     }
   }
 
