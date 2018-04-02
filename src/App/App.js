@@ -11,7 +11,7 @@ class App extends Component {
       knightPosition:[1,7],
       bishopPosition: [2, 7],
       selectedPiece: '',
-      message: ''
+      message: 'To move the pieces first click on a piece and then click on the square you want it to move to. Note that the pieces can only make valid chess moves'
     };
     this.setSquare = this.setSquare.bind(this);
   }
@@ -21,7 +21,7 @@ class App extends Component {
     if (piece) {
       this.checkMoveValid(x, y)
     } else {
-      console.log('Select a piece to move')
+      this.setState({message: 'Select a piece to move'})
     }
   }
 
@@ -33,6 +33,10 @@ class App extends Component {
     }
   }
 
+  // if there is a piece selected && if the new x, y coordinate equals the same coordinate of the other piece, then you can't move
+
+
+
   moveKnight(x,y){
         const [knightX, knightY] = this.state.knightPosition
     const moveX = Math.abs(x - knightX);
@@ -41,6 +45,7 @@ class App extends Component {
     if((moveX === 2 && moveY === 1) || (moveX === 1 && moveY === 2) ){
       this.setState({knightPosition: [x, y]})
       this.setState({message: ''})
+      this.setState({selectedPiece: ''})
     } else {
       this.setState({message: 'Invalid move -- knights can only move in an L shape'})
     }
@@ -54,15 +59,64 @@ class App extends Component {
     if(moveX === 1 && moveY === 1) {
       this.setState({bishopPosition: [x, y]})
       this.setState({message: ''})
+      this.setState({selectedPiece: ''})
     } else {
        this.setState({message: 'Invalid move - bishops can only move diagonally'})
     }
   }
 
-  setSquare (x, y) {
+  // setSquare(x,y) {
+  //   if(piece) {
+
+  //   }
+  // }
+
+// need to check to see if the piece you are clicking already contains the coordinates for the other piece
+
+  // 1. click on a piece
+  // 2. if the piece you clicked on equals the same coordinates as the knight or bishop piece, that piece is selected in the state
+// 3. if it does not equal the coordinates - it then checks to see if a piece is already selected
+// 4. if a piece is already selected - then it checks to see if the position you want to move to is a valid chess move
+// 5. if it's valid, the piece moves. if it is not valid, the piece doesn't move and you get an error message
+  
+  // if this.state.selectedPiece == knight & xy coordinates you get === bishop coordinates then you can't move. and if the selected piece is a bishop and the xy coordinates === knight coordinates then you can't move
+
+
+  setSquare(x, y) {
+   
+    const piece = this.state.selectedPiece;
+
+    if(piece) {
+      this.checkSquareDuplicate(x,y)
+    } else {
+      this.setSquare2(x,y)
+    }
+  }
+
+    checkSquareDuplicate(x,y) {
     const [knightX, knightY] = this.state.knightPosition;
     const [bishopX, bishopY] = this.state.bishopPosition;
-    console.log(this.state.selectedPiece)
+    if((this.state.selectedPiece === 'knight') && (bishopX === x && bishopY === y)) {
+      this.setState({message: 'Invalid move. Move to a space that is not occupied by the bishop'})
+    } else if ((this.state.selectedPiece === 'bishop') && (knightX === x && knightY === y)){
+        this.setState({message: 'Invalid move. Move to a space that is not occupied by the knight'})
+    } else {
+      console.log('can move')
+      this.checkMoveValid(x, y)
+    }
+  }
+
+
+
+  setSquare2 (x, y) {
+    const [knightX, knightY] = this.state.knightPosition;
+    console.log('knight xy', knightX, knightY)
+    const [bishopX, bishopY] = this.state.bishopPosition;
+    console.log('bishop xy', bishopX, bishopY)
+
+
+
+      this.setState({message: ''})
     if(knightX === x && knightY === y) {
       this.setState({selectedPiece: 'knight'})
     } else if (bishopX === x && bishopY === y ){

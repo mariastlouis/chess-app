@@ -14,7 +14,7 @@ const ControlPanel = ({message, chessPiece}) => {
     } else if (chessPiece === 'bishop') {
       return 'Bishop selected'
     } else {
-      return 'Select a piece to play'
+      return 'Click on a piece to play'
     }
   }
 
