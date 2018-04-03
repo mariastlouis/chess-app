@@ -29,10 +29,9 @@ describe('Square', () => {
     expect(renderedSquare).toBeDefined();
   });
 
-    it('should match the snapshot', () =>{
+  it('should match the snapshot', () =>{
     expect(renderedSquare).toMatchSnapshot();
   });
-
 
 it('should call the setSquare function if the square is clicked', () => {
     expect(mockSetSquareFunction.mock.calls.length).toEqual(0);
@@ -42,7 +41,6 @@ it('should call the setSquare function if the square is clicked', () => {
 
 it('should have a default class of white', () => {
   expect(renderedSquare.find('.white').length).toEqual(1);
-})
-
+});
 
 });
