@@ -22,9 +22,8 @@ const ControlPanel = ({message, chessPiece}) => {
 
   return (
     <div className = "ControlPanel">
-      
-      <h2> {message} </h2>
       <h2>{selectedPieceMessage()} </h2>
+      <h2> {message} </h2>
     </div>
   );
 };
