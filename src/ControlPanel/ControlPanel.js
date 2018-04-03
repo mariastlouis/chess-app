@@ -81,13 +81,7 @@ class ControlPanel extends Component {
 export default ControlPanel;
 
 ControlPanel.propTypes = {
-  squareColor: PropTypes.func,
-  knightPosition: PropTypes.array,
-  bishopPosition: PropTypes.array,
-  squareX: PropTypes.number,
-  squareY: PropTypes.number,
-  setSquare: PropTypes.func,
-  selectPiece: PropTypes.func,
+  message: PropTypes.string,
   chessPiece: PropTypes.string,
-  gameMode: PropTypes.string
+  mode: PropTypes.func
 }

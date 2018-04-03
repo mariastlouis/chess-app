@@ -100,3 +100,15 @@ hoverSquare = event => {
 };
 
 export default Square;
+
+Square.propTypes = {
+  squareColor: PropTypes.bool,
+  knightPosition: PropTypes.array,
+  bishopPosition: PropTypes.array,
+  squareX: PropTypes.number,
+  squareY: PropTypes.number,
+  setSquare: PropTypes.func,
+  selectPiece: PropTypes.func,
+  chessPiece: PropTypes.string,
+  gameMode: PropTypes.string
+}

@@ -48,3 +48,13 @@ const Board = ({knightPosition, bishopPosition, setSquare, chessPiece, selectPie
 };
 
 export default Board;
+
+Square.propTypes = {
+  knightPosition: PropTypes.array,
+  bishopPosition: PropTypes.array,
+  setSquare: PropTypes.func,
+  chessPiece: PropTypes.string,
+  selectPiece: PropTypes.func,
+  checkMoveValid: PropTypes.func,
+  gameMode: PropTypes.string
+}

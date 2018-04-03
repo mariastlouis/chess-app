@@ -31,3 +31,7 @@ const Knight = ({mode}) => {
 };
 
 export default Knight;
+
+Knight.propTypes = {
+  gameMode: PropTypes.string,
+};
