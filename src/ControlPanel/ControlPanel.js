@@ -13,8 +13,6 @@ class ControlPanel extends Component {
     }
   }
 
-
-
   selectedPieceMessage() {
     if (this.props.chessPiece === 'knight') {
       return 'Knight selected'
@@ -27,10 +25,8 @@ class ControlPanel extends Component {
 
   handleOptionChange = event => {
     let mode = event.target.value
-
     this.setState({selectedOption: mode})
     this.props.mode(mode)
-
   }
 
   render () {

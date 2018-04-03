@@ -53,4 +53,4 @@ Square.propTypes = {
   selectPiece: PropTypes.func,
   checkMoveValid: PropTypes.func,
   gameMode: PropTypes.string
-}
+};

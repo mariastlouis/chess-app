@@ -19,33 +19,31 @@ describe('Knight', () =>{
     expect(renderedPiece).toBeDefined();
   });
 
-   it('should match the snapshot', () =>{
+  it('should match the snapshot', () =>{
     expect(renderedPiece).toMatchSnapshot();
   });
 
-   it('should render a knight image by default', () => {
-     expect(renderedPiece.containsMatchingElement(
+  it('should render a knight image by default', () => {
+    expect(renderedPiece.containsMatchingElement(
       <img src="knight.png" className="knight gamepiece" alt="knight" />))
       .toEqual(true);
-   })
+  });
 
-   it('should render a donkey if the mode if is on democrat mode', () => {
+  it('should render a donkey if the mode if is on democrat mode', () => {
     const renderedDemPiece = shallow (
-      <Knight mode = 'democrat' />)
+      <Knight mode = 'democrat' />);
+
     expect(renderedDemPiece.containsMatchingElement(
       <img src="demDonkey.png" className="knight gamepiece" alt="knight" />))
       .toEqual(true);
-   });
+  });
 
-     it('should render an elephant if the mode if is on republican mode', () => {
+  it('should render an elephant if the mode if is on republican mode', () => {
     const renderedRepPiece = shallow (
-      <Knight mode = 'republican' />)
-    console.log(renderedRepPiece.debug())
+      <Knight mode = 'republican' />);
+
     expect(renderedRepPiece.containsMatchingElement(
-     <img src="repElephant.png" className="knight gamepiece" alt="knight" />))
+      <img src="repElephant.png" className="knight gamepiece" alt="knight" />))
       .toEqual(true);
-   });
-
-
-
+  });
 });
