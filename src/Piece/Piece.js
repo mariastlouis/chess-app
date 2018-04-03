@@ -4,22 +4,23 @@ import knight from '../resources/knight.png';
 import donkey from '../resources/demDonkey.png';
 import elephant from '../resources/repElephant.png';
 
-import './Piece.css'
+import './Piece.css';
 
 
 const Piece = ({mode}) => {
 
-const selectMode = () => {
-  let piece;
-  if(mode === 'standard') {
-    piece = knight
-  } else if (mode === 'democrat'){
-   piece = donkey
-  } else {
-    piece = elephant
-  }
-  return piece
-}
+  const selectMode = () => {
+    let piece;
+
+    if (mode === 'standard') {
+      piece = knight;
+    } else if (mode === 'democrat') {
+      piece = donkey;
+    } else {
+      piece = elephant;
+    }
+    return piece;
+  };
 
 
   return (
