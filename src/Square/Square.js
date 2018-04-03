@@ -12,8 +12,6 @@ class Square extends Component  {
     }
   }
 
-// = ({squareColor, knightPosition, bishopPosition, squareX, squareY, setSquare, selectPiece, chessPiece}) =>
-
 
 checkColor() {
   const mode = this.props.gameMode;

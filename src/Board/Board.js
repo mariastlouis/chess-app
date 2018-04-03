@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Board.css';
 import Square from '../Square/Square';
-import Piece from '../Piece/Piece';
 
 
 const Board = ({knightPosition, bishopPosition, setSquare, chessPiece, selectPiece, gameMode}) => {
@@ -11,9 +10,6 @@ const Board = ({knightPosition, bishopPosition, setSquare, chessPiece, selectPie
     const y = Math.floor(i / 8);
     const squareColor = (x + y) % 2 === 1;
     const [knightX, knightY] = knightPosition;
-
-    const piece = (x === knightX && y === knightY) ?
-      <Piece /> : null;
 
     return (
 
