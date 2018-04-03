@@ -40,7 +40,7 @@ class ControlPanel extends Component {
         <form>
           <div className="radio">
           <label>
-            <input type="radio" value="standard"
+            <input type="radio" value="standard" className = 'standard'
              checked={this.state.selectedOption === 'standard'}
               onChange= {this.handleOptionChange}/>
             Standard Chess
