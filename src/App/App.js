@@ -111,60 +111,44 @@ class App extends Component {
     if(piece) {
       this.checkSquareDuplicate(x,y)
     } else {
-      this.setSquare2(x,y)
+      this.setSelect(x,y)
     }
   }
 
-  //   checkSquareDuplicate(x,y) {
-  //   const [knightX, knightY] = this.state.knightPosition;
-  //   const [bishopX, bishopY] = this.state.bishopPosition;
-  //   if((this.state.selectedPiece === 'knight') && (bishopX === x && bishopY === y)) {
-  //     this.setState({message: 'Invalid move. Move to a space that is not occupied by the bishop'})
-  //   } else if ((this.state.selectedPiece === 'bishop') && (knightX === x && knightY === y)){
-  //       this.setState({message: 'Invalid move. Move to a space that is not occupied by the knight'})
-  //   } else {
-  //     console.log('can move')
-  //     this.checkMoveValid(x, y)
-  //   }
-  // }
 
 
-
-  setSquare2 (x, y) {
+  setSelect (x, y) {
     const [knightX, knightY] = this.state.knightPosition;
-  
     const [bishopX, bishopY] = this.state.bishopPosition;
-   
-
-
-
-      this.setState({message: ''})
+    this.setState({message: ''})
     if(knightX === x && knightY === y) {
       this.setState({selectedPiece: 'knight'})
     } else if (bishopX === x && bishopY === y ){
       this.setState({selectedPiece: 'bishop'})
     } else {
       this.checkSelectedPiece(x, y)
+    }
   }
-}
 
   render() {
     return (
       <div className="app">
+       
+        <div className = "sider">
+          <ControlPanel 
+            message = {this.state.message}
+            chessPiece = {this.state.selectedPiece}
+            mode = {this.setMode}/>
+        </div>
         <div className = "game-board">
           <Board 
-          knightPosition={this.state.knightPosition}
-          bishopPosition = {this.state.bishopPosition}
-          setSquare = {this.setSquare}
-          chessPiece = {this.state.selectedPiece}
-          selectPiece = {this.selectPiece}
-          checkMoveValid = {this.checkMoveValid}
-          gameMode = {this.state.gameMode}/>
-        </div>
-        <div className = "sider">
-          <ControlPanel message = {this.state.message}
-                        chessPiece = {this.state.selectedPiece}
-                        mode = {this.setMode}/>
+            knightPosition={this.state.knightPosition}
+            bishopPosition = {this.state.bishopPosition}
+            setSquare = {this.setSquare}
+            chessPiece = {this.state.selectedPiece}
+            selectPiece = {this.selectPiece}
+            checkMoveValid = {this.checkMoveValid}
+            gameMode = {this.state.gameMode}/>
         </div>
       </div>
     );

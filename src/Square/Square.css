@@ -3,6 +3,12 @@
 body {
   font-family: "Cabin", sans-serif; }
 
+h1, h2, p, label {
+  color: #575b57; }
+
+label {
+  font-size: 20px; }
+
 .oneSquare {
   border: 1px solid gray; }
 
@@ -24,3 +30,11 @@ body {
   height: 100px;
   justify-content: center;
   width: inherit; }
+
+@media screen and (max-width: 750px) {
+  .piece-container {
+    height: 75px; } }
+
+@media screen and (max-width: 550px) {
+  .piece-container {
+    height: 50px; } }

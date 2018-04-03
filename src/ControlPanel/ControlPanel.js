@@ -35,11 +35,12 @@ class ControlPanel extends Component {
 
   render () {
   return (
-    <div className = "ControlPanel">
-      <img src = {logo} alt = "logo" className = "logo"/>
-      <h2>{this.selectedPieceMessage()} </h2>
-      <h2> {this.props.message} </h2>
-      <div className = "mode-form">
+    <div className = "controlPanel">
+      <div className = "logo-div sider-div">
+        <img src = {logo} alt = "logo" className = "logo"/>
+      </div>
+      <div className = "mode-form sider-div">
+        <h2> Select a game mode </h2>
         <form>
           <div className="radio">
           <label>
@@ -66,6 +67,11 @@ class ControlPanel extends Component {
           </label>
         </div>
         </form>
+        <hr />
+      </div>
+      <div className = "message-div sider-div">
+        <h2>{this.selectedPieceMessage()} </h2>
+        <h2> {this.props.message} </h2>
       </div>
     </div>
   );

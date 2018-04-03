@@ -27,3 +27,15 @@
   justify-content: center;
   width: inherit;
 }
+
+@media screen and (max-width: 750px) {
+  .piece-container {
+    height: 75px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .piece-container {
+    height: 50px;
+  }
+}
