@@ -36,14 +36,14 @@ checkColor() {
 displayPiece(){
    const [knightX, knightY] = this.props.knightPosition;
     const piece = (this.props.squareX === knightX && this.props.squareY === knightY) ?
-    <Piece /> : null;
+    <Piece mode = {this.props.gameMode} /> : null;
   return piece;
 }
 
 displayBishop (){
   const [bishopX, bishopY] = this.props.bishopPosition;
   const bishop = (this.props.squareX === bishopX && this.props.squareY === bishopY) ? 
-  <Bishop /> : null;
+  <Bishop mode = {this.props.gameMode}/> : null;
   return bishop;
 }
 
