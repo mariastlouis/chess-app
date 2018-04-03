@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       knightPosition:[1,7],
       bishopPosition: [2, 7],
+      gameMode: '',
       selectedPiece: '',
       message: 'To move the pieces, first click on a piece and then click on the square you want it to move to. Note that the pieces can only make valid chess moves'
     };
@@ -32,6 +33,10 @@ class App extends Component {
     } else {
       this.moveBishop(x,y)
     }
+  }
+
+  setMode(mode) {
+    this.setState({gameMode: mode})
   }
 
   // if there is a piece selected && if the new x, y coordinate equals the same coordinate of the other piece, then you can't move
@@ -156,7 +161,8 @@ class App extends Component {
         </div>
         <div className = "sider">
           <ControlPanel message = {this.state.message}
-                        chessPiece = {this.state.selectedPiece}/>
+                        chessPiece = {this.state.selectedPiece}
+                        mode = {this.setMode}/>
         </div>
       </div>
     );
