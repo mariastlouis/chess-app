@@ -31,3 +31,9 @@ const Bishop = ({mode}) => {
 };
 
 export default Bishop;
+
+Bishop.propTypes = {
+  gameMode: PropTypes.string,
+};
+
+  

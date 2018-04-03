@@ -41,9 +41,6 @@ class App extends Component {
     this.setState({gameMode: mode});
   }
 
-  // if there is a piece selected && if the new x, y coordinate equals the same coordinate of the other piece, then you can't move
-
-
   checkSquareDuplicate(x,y) {
     const [knightX, knightY] = this.state.knightPosition;
     const [bishopX, bishopY] = this.state.bishopPosition;
@@ -89,23 +86,6 @@ class App extends Component {
     }
   }
 
-  // setSquare(x,y) {
-  //   if(piece) {
-
-  //   }
-  // }
-
-  // need to check to see if the piece you are clicking already contains the coordinates for the other piece
-  // error is happening when you are trying to switch over pieces. You have a knight selected and are trying to select a bishop piece. You only want the error on move to happen if it is a valid move. If it is not a valid move, it should proceed as normal. 
-  // 1. click on a piece
-  // 2. if the piece you clicked on equals the same coordinates as the knight or bishop piece, that piece is selected in the state
-  // 3. if it does not equal the coordinates - it then checks to see if a piece is already selected
-  // 4. if a piece is already selected - then it checks to see if the position you want to move to is a valid chess move
-  // 5. if it's valid, the piece moves. if it is not valid, the piece doesn't move and you get an error message
-  
-  // if this.state.selectedPiece == knight & xy coordinates you get === bishop coordinates then you can't move. and if the selected piece is a bishop and the xy coordinates === knight coordinates then you can't move
-
-
   setSquare(x, y) {
    
     const piece = this.state.selectedPiece;
@@ -116,8 +96,6 @@ class App extends Component {
       this.setSelect(x,y);
     }
   }
-
-
 
   setSelect (x, y) {
     const [knightX, knightY] = this.state.knightPosition;
