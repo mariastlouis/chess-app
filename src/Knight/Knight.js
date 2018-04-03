@@ -4,10 +4,10 @@ import knight from '../resources/knight.png';
 import donkey from '../resources/demDonkey.png';
 import elephant from '../resources/repElephant.png';
 
-import './Piece.css';
+import './Knight.css';
 
 
-const Piece = ({mode}) => {
+const Knight = ({mode}) => {
 
   const selectMode = () => {
     let piece;
@@ -30,4 +30,4 @@ const Piece = ({mode}) => {
   );
 };
 
-export default Piece;
+export default Knight;

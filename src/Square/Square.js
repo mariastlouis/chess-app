@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Square.css';
-import Piece from '../Piece/Piece';
+import Knight from '../Knight/Knight';
 import Bishop from '../Bishop/Bishop';
 
 class Square extends Component  {
@@ -36,7 +36,7 @@ checkColor() {
 displayPiece(){
    const [knightX, knightY] = this.props.knightPosition;
     const piece = (this.props.squareX === knightX && this.props.squareY === knightY) ?
-    <Piece mode = {this.props.gameMode} /> : null;
+    <Knight mode = {this.props.gameMode} /> : null;
   return piece;
 }
 
