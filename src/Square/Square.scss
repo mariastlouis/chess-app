@@ -1,13 +1,7 @@
 @import 'variable';
 
 .oneSquare {
-  height: 100%;
-  width: 100%;
-  border: 1px solid black;
-}
-
-.piece-container:hover{
-  background: green;
+  border: 1px solid gray;
 }
 
 .gray {
@@ -26,15 +20,10 @@
   background-color: $republican-red;
 }
 
-.green:hover{
-  background-color: green;
-}
-
-.red:hover {
-  background-color: red;
-}
-
 .piece-container {
+  align-items: center;
+  display: flex;
   height: 100px;
-  width: 100px;
+  justify-content: center;
+  width: inherit;
 }
