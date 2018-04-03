@@ -22,7 +22,7 @@ describe('Square', () => {
         selectPiece = {mockSelectPieceFunction}
         checkMoveValid = {mockCheckMoveValid}
         gameMode = {'democrat'} />);
-  })
+  });
 
   it('should render corrrectly', () => {
     expect(renderedBoard).toBeDefined();
@@ -34,7 +34,7 @@ describe('Square', () => {
 
   it('should have 64 squares', () => {
     expect(renderedBoard.find('.square-container').length).toEqual(64);
-  })
+  });
 
 
 });

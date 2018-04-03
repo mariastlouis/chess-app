@@ -23,7 +23,7 @@ describe('Square', () => {
         selectPiece = {mockSelectPieceFunction}
         chessPiece = {'bishop'}
         gameMode = {'democrat'} />);
-  })
+  });
 
   it('should render corrrectly', () => {
     expect(renderedSquare).toBeDefined();
@@ -33,14 +33,14 @@ describe('Square', () => {
     expect(renderedSquare).toMatchSnapshot();
   });
 
-it('should call the setSquare function if the square is clicked', () => {
+  it('should call the setSquare function if the square is clicked', () => {
     expect(mockSetSquareFunction.mock.calls.length).toEqual(0);
     renderedSquare.find('.piece-container').simulate('click');
     expect(mockSetSquareFunction.mock.calls.length).toEqual(1);
   });
 
-it('should have a default class of white', () => {
-  expect(renderedSquare.find('.white').length).toEqual(1);
-});
+  it('should have a default class of white', () => {
+    expect(renderedSquare.find('.white').length).toEqual(1);
+  });
 
 });
