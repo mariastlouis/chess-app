@@ -9,7 +9,7 @@ This app is a fun way to move a couple of chess pieces across a chess board. Use
 * React.Js
 * Jest/Enzyme for testing
 
-# To run the app:
+## To run the app:
 
 To open, download or clone this repository - cd into the directory and enter 'npm install" into the terminal
 
