@@ -15,13 +15,46 @@ class Square extends Component  {
 // = ({squareColor, knightPosition, bishopPosition, squareX, squareY, setSquare, selectPiece, chessPiece}) =>
 
 
-
 checkColor() {
+  const mode = this.props.gameMode;
+  let modeColor;
+  if (mode === 'standard') {
+    modeColor = 'gray'
+  } else if (mode === 'democrat'){
+    modeColor = 'blue'
+  } else {
+      modeColor = 'red'
+    }
+  return this.reflectColor(modeColor)
+}
+
+  reflectColor(modeColor) {
+    const color = this.props.squareColor ? 'white' : modeColor
+    return color
+  }
+
+// checkColor() {
+//   const mode = this.props.gameMode
+
+
+
+//   const selectedColor = (mode) => {
+//     let modeColor
+//     if (mode === 'standard') {
+//       modeColor = 'gray'
+//     } else {
+//       modeColor = 'blue'
+//     }
+//     console.log(modeColor)
+//     return modeColor;
+//   }
+
+
   
 
-  const color = this.props.squareColor ? 'white' : 'gray'
-  return color;
-}
+//   const color = this.props.squareColor ? 'white' : 'gray'
+//   return color;
+// }
 
 
 displayPiece(){

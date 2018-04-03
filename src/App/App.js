@@ -10,12 +10,13 @@ class App extends Component {
     this.state = {
       knightPosition:[1,7],
       bishopPosition: [2, 7],
-      gameMode: '',
+      gameMode: 'standard',
       selectedPiece: '',
       message: 'To move the pieces, first click on a piece and then click on the square you want it to move to. Note that the pieces can only make valid chess moves'
     };
     this.setSquare = this.setSquare.bind(this);
     this.checkMoveValid = this.checkMoveValid.bind(this);
+    this.setMode = this.setMode.bind(this);
   }
 
   checkSelectedPiece(x, y) {
@@ -157,7 +158,8 @@ class App extends Component {
           setSquare = {this.setSquare}
           chessPiece = {this.state.selectedPiece}
           selectPiece = {this.selectPiece}
-          checkMoveValid = {this.checkMoveValid}/>
+          checkMoveValid = {this.checkMoveValid}
+          gameMode = {this.state.gameMode}/>
         </div>
         <div className = "sider">
           <ControlPanel message = {this.state.message}

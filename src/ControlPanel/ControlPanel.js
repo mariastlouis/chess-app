@@ -30,9 +30,7 @@ class ControlPanel extends Component {
     let mode = event.target.value
 
     this.setState({selectedOption: mode})
-    console.log(this.state.selectedOption)
-    // console.log(this.state.selectedOption)
-    // this.setState({selectedOption: event.target.value})
+    this.props.mode(mode)
 
   }
 
