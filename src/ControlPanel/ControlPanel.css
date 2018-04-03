@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Pathway+Gothic+One");
+@import url("https://fonts.googleapis.com/css?family=Cabin");
+body {
+  font-family: "Cabin", sans-serif; }
+
+.logo {
+  width: 100%; }

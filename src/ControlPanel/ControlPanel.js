@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-// import './ControlPanel.css'
+import logo from '../resources/logo.png'
+import './ControlPanel.css'
 
 
 
@@ -11,7 +11,6 @@ class ControlPanel extends Component {
     this.state = {
       selectedOption: 'standard'
     }
-
   }
 
 
@@ -37,6 +36,7 @@ class ControlPanel extends Component {
   render () {
   return (
     <div className = "ControlPanel">
+      <img src = {logo} alt = "logo" className = "logo"/>
       <h2>{this.selectedPieceMessage()} </h2>
       <h2> {this.props.message} </h2>
       <div className = "mode-form">
