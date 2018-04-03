@@ -4,22 +4,23 @@ import knight from '../resources/knight.png';
 import donkey from '../resources/demDonkey.png';
 import elephant from '../resources/repElephant.png';
 
-import './Piece.css'
+import './Knight.css';
 
 
-const Piece = ({mode}) => {
+const Knight = ({mode}) => {
 
-const selectMode = () => {
-  let piece;
-  if(mode === 'standard') {
-    piece = knight
-  } else if (mode === 'democrat'){
-   piece = donkey
-  } else {
-    piece = elephant
-  }
-  return piece
-}
+  const selectMode = () => {
+    let piece;
+
+    if (mode === 'standard') {
+      piece = knight;
+    } else if (mode === 'democrat') {
+      piece = donkey;
+    } else {
+      piece = elephant;
+    }
+    return piece;
+  };
 
 
   return (
@@ -29,4 +30,8 @@ const selectMode = () => {
   );
 };
 
-export default Piece;
+export default Knight;
+
+Knight.propTypes = {
+  gameMode: PropTypes.string,
+};

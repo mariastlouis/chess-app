@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Square.css';
-import Piece from '../Piece/Piece';
+import Knight from '../Knight/Knight';
 import Bishop from '../Bishop/Bishop';
 
 class Square extends Component  {
@@ -11,8 +11,6 @@ class Square extends Component  {
       validMove: []
     }
   }
-
-// = ({squareColor, knightPosition, bishopPosition, squareX, squareY, setSquare, selectPiece, chessPiece}) =>
 
 
 checkColor() {
@@ -36,7 +34,7 @@ checkColor() {
 displayPiece(){
    const [knightX, knightY] = this.props.knightPosition;
     const piece = (this.props.squareX === knightX && this.props.squareY === knightY) ?
-    <Piece mode = {this.props.gameMode} /> : null;
+    <Knight mode = {this.props.gameMode} /> : null;
   return piece;
 }
 
@@ -100,3 +98,15 @@ hoverSquare = event => {
 };
 
 export default Square;
+
+Square.propTypes = {
+  squareColor: PropTypes.bool,
+  knightPosition: PropTypes.array,
+  bishopPosition: PropTypes.array,
+  squareX: PropTypes.number,
+  squareY: PropTypes.number,
+  setSquare: PropTypes.func,
+  selectPiece: PropTypes.func,
+  chessPiece: PropTypes.string,
+  gameMode: PropTypes.string
+}

@@ -79,3 +79,9 @@ class ControlPanel extends Component {
 };
 
 export default ControlPanel;
+
+ControlPanel.propTypes = {
+  message: PropTypes.string,
+  chessPiece: PropTypes.string,
+  mode: PropTypes.func
+}
