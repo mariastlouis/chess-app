@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Pathway+Gothic+One");
+@import url("https://fonts.googleapis.com/css?family=Cabin");
+body {
+  font-family: "Cabin", sans-serif; }
+
+h1, h2, p, label {
+  color: #575b57; }
+
+label {
+  font-size: 20px; }
+
 .square-container {
   height: 12.5%;
   width: 12.5%; }

@@ -3,12 +3,40 @@
 body {
   font-family: "Cabin", sans-serif; }
 
+h1, h2, p, label {
+  color: #575b57; }
+
+label {
+  font-size: 20px; }
+
 .app {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  justify-content: center; }
 
 .game-board {
+  max-width: 950px;
   width: 70%; }
 
 .sider {
+  max-width: 400px;
+  padding: 15px;
   width: 30%; }
+
+@media screen and (max-width: 1000px) {
+  .app {
+    flex-direction: column;
+    align-items: center; }
+  .sider {
+    width: 100%;
+    max-width: 950px; }
+  .sider-div {
+    width: 30%;
+    padding: 10px; }
+  hr {
+    display: none; } }
+
+@media screen and (max-width: 700px) {
+  .sider-div {
+    width: 100%;
+    padding: 0px; } }

@@ -1,23 +1,40 @@
-.oneSquare {
-  height: 100%;
-  width: 100%;
-  border: 1px solid black; }
+@import url("https://fonts.googleapis.com/css?family=Pathway+Gothic+One");
+@import url("https://fonts.googleapis.com/css?family=Cabin");
+body {
+  font-family: "Cabin", sans-serif; }
 
-.piece-container:hover {
-  background: green; }
+h1, h2, p, label {
+  color: #575b57; }
+
+label {
+  font-size: 20px; }
+
+.oneSquare {
+  border: 1px solid gray; }
 
 .gray {
-  background-color: gray; }
+  background-color: #7b807b; }
 
 .white {
   background-color: white; }
 
-.green:hover {
-  background-color: green; }
+.blue {
+  background-color: #184982; }
 
-.red:hover {
-  background-color: red; }
+.red {
+  background-color: #a2000b; }
 
 .piece-container {
+  align-items: center;
+  display: flex;
   height: 100px;
-  width: 100px; }
+  justify-content: center;
+  width: inherit; }
+
+@media screen and (max-width: 750px) {
+  .piece-container {
+    height: 75px; } }
+
+@media screen and (max-width: 550px) {
+  .piece-container {
+    height: 50px; } }

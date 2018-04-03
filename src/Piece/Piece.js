@@ -1,14 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import knight from '../resources/knight.png';
-import bishop from '../resources/bishop.png';
+import donkey from '../resources/demDonkey.png';
+import elephant from '../resources/repElephant.png';
+
 import './Piece.css'
 
 
-const Piece = () => {
+const Piece = ({mode}) => {
+
+const selectMode = () => {
+  let piece;
+  if(mode === 'standard') {
+    piece = knight
+  } else if (mode === 'democrat'){
+   piece = donkey
+  } else {
+    piece = elephant
+  }
+  return piece
+}
+
+
   return (
     <div className = "Piece">
-      <img src = {knight} className = 'knight gamepiece' alt = 'knight' />
+      <img src = {`${selectMode()}`} className = 'knight gamepiece' alt = 'knight' />
     </div>
   );
 };

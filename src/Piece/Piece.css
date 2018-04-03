@@ -1,2 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Pathway+Gothic+One");
+@import url("https://fonts.googleapis.com/css?family=Cabin");
+body {
+  font-family: "Cabin", sans-serif; }
+
+h1, h2, p, label {
+  color: #575b57; }
+
+label {
+  font-size: 20px; }
+
 .gamepiece {
-  width: 50px; }
+  width: 70px; }
+
+@media screen and (max-width: 750px) {
+  .gamepiece {
+    width: 60px; } }
+
+@media screen and (max-width: 550px) {
+  .gamepiece {
+    width: 30px; } }

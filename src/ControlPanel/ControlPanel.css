@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Pathway+Gothic+One");
+@import url("https://fonts.googleapis.com/css?family=Cabin");
+body {
+  font-family: "Cabin", sans-serif; }
+
+h1, h2, p, label {
+  color: #575b57; }
+
+label {
+  font-size: 20px; }
+
+.logo {
+  width: 100%; }
+
+.radio {
+  padding: 3px; }
+
+.controlPanel {
+  display: flex;
+  flex-direction: column; }
+
+@media screen and (max-width: 1000px) {
+  .controlPanel {
+    flex-direction: row; } }
+
+@media screen and (max-width: 700px) {
+  .controlPanel {
+    flex-direction: column; } }

@@ -5,9 +5,23 @@ $accent-font: 'Pathway Gothic One', sans-serif;
 
 $body-font: 'Cabin', sans-serif;
 
-$accent-color: #feda4a;
+$light-gray: #7b807b;
+
+$dark-gray: #575b57;
+
+$republican-red: #a2000b;
+
+$democrat-blue: #184982;
 
 body {
-  font-family: $body-font
-  
+  font-family: $body-font;
 }
+
+h1, h2, p, label {
+  color: $dark-gray;
+}
+
+label {
+  font-size: 20px;
+}
+

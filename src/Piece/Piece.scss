@@ -1,4 +1,17 @@
+@import 'variable';
+
 .gamepiece {
-  width: 50px;
+  width: 70px;
 }
 
+@media screen and (max-width: 750px) {
+  .gamepiece {
+    width: 60px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .gamepiece {
+    width: 30px;
+  }
+}
