@@ -1,10 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import App from './App.js';
+import {shallow} from 'enzyme';
+import * as enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+enzyme.configure({ adapter: new Adapter() });
 
-it('renders without crashing', () => {
-  // const div = document.createElement('div');
+let renderedApp;
 
-  // ReactDOM.render(<App />, div);
-  // ReactDOM.unmountComponentAtNode(div);
+describe('App', () => {
+  beforeEach(() => {
+    renderedApp = shallow(
+      <App />)
+  });
+  
+  it('should render correctly', () => {
+    expect(renderedApp).toBeDefined();
+  });
+
+  it('should match the snapshot', () =>{
+    expect(renderedApp).toMatchSnapshot();
+  });
+
+
 });

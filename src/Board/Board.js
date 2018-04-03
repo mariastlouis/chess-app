@@ -13,8 +13,9 @@ const Board = ({knightPosition, bishopPosition, setSquare, chessPiece, selectPie
 
     return (
 
-      <div className = "square-container">
-        <Square squareColor = {squareColor}
+      <div className = "square-container" key = {i}>
+        <Square 
+          squareColor = {squareColor}
           knightPosition = {knightPosition}
           bishopPosition = {bishopPosition}
           squareX = {x}
@@ -53,4 +54,4 @@ Square.propTypes = {
   selectPiece: PropTypes.func,
   checkMoveValid: PropTypes.func,
   gameMode: PropTypes.string
-}
+};

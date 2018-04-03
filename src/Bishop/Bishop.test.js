@@ -1,5 +1,5 @@
 import React from 'react';
-import Knight from './Knight.js';
+import Bishop from './Bishop.js';
 import {shallow} from 'enzyme';
 import * as enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -7,10 +7,10 @@ enzyme.configure({ adapter: new Adapter() });
 
 let renderedPiece;
 
-describe('Knight', () =>{
+describe('Bishop', () =>{
   beforeEach(() => {
     renderedPiece = shallow(
-      <Knight 
+      <Bishop 
         mode = 'standard'
       />);
   });
@@ -23,27 +23,27 @@ describe('Knight', () =>{
     expect(renderedPiece).toMatchSnapshot();
   });
 
-  it('should render a knight image by default', () => {
+  it('should render a bishop image by default', () => {
     expect(renderedPiece.containsMatchingElement(
-      <img src="knight.png" className="knight gamepiece" alt="knight" />))
+      <img src="bishop.png" className="bishop gamepiece" alt="bishop" />))
       .toEqual(true);
   });
 
-  it('should render a donkey if the mode if is on democrat mode', () => {
+  it('should render a blue capitol building if the mode if is on democrat mode', () => {
     const renderedDemPiece = shallow (
-      <Knight mode = 'democrat' />);
+      <Bishop mode = 'democrat' />);
 
     expect(renderedDemPiece.containsMatchingElement(
-      <img src="demDonkey.png" className="knight gamepiece" alt="knight" />))
+      <img src="demCapitol.png" className="bishop gamepiece" alt="bishop" />))
       .toEqual(true);
   });
 
-  it('should render an elephant if the mode if is on republican mode', () => {
+  it('should render red capitol building if the mode if is on republican mode', () => {
     const renderedRepPiece = shallow (
-      <Knight mode = 'republican' />);
+      <Bishop mode = 'republican' />);
 
     expect(renderedRepPiece.containsMatchingElement(
-      <img src="repElephant.png" className="knight gamepiece" alt="knight" />))
+      <img src="repCapitol.png" className="bishop gamepiece" alt="bishop" />))
       .toEqual(true);
   });
 });
