@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Pathway+Gothic+One");
+@import url("https://fonts.googleapis.com/css?family=Cabin");
+body {
+  font-family: "Cabin", sans-serif; }
+
 .oneSquare {
   height: 100%;
   width: 100%;
@@ -7,16 +12,16 @@
   background: green; }
 
 .gray {
-  background-color: gray; }
+  background-color: #7b807b; }
 
 .white {
   background-color: white; }
 
 .blue {
-  background-color: blue; }
+  background-color: #184982; }
 
 .red {
-  background-color: red; }
+  background-color: #a2000b; }
 
 .green:hover {
   background-color: green; }

@@ -33,30 +33,6 @@ checkColor() {
     return color
   }
 
-// checkColor() {
-//   const mode = this.props.gameMode
-
-
-
-//   const selectedColor = (mode) => {
-//     let modeColor
-//     if (mode === 'standard') {
-//       modeColor = 'gray'
-//     } else {
-//       modeColor = 'blue'
-//     }
-//     console.log(modeColor)
-//     return modeColor;
-//   }
-
-
-  
-
-//   const color = this.props.squareColor ? 'white' : 'gray'
-//   return color;
-// }
-
-
 displayPiece(){
    const [knightX, knightY] = this.props.knightPosition;
     const piece = (this.props.squareX === knightX && this.props.squareY === knightY) ?
