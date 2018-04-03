@@ -1,44 +1,93 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Square.css';
 import Piece from '../Piece/Piece';
 import Bishop from '../Bishop/Bishop';
 
-const Square = ({squareColor, knightPosition, bishopPosition, squareX, squareY, setSquare, selectPiece, chessPiece}) => {
+class Square extends Component  {
+  constructor () {
+    super();
+    this.state = {
+      validMove: []
+    }
+  }
+
+// = ({squareColor, knightPosition, bishopPosition, squareX, squareY, setSquare, selectPiece, chessPiece}) =>
 
 
 
-const color = squareColor ? 'white' : 'gray'
+checkColor() {
+  
 
-const displayPiece = () => {
-   const [knightX, knightY] = knightPosition;
-    const piece = (squareX === knightX && squareY === knightY) ?
+  const color = this.props.squareColor ? 'white' : 'gray'
+  return color;
+}
+
+
+displayPiece(){
+   const [knightX, knightY] = this.props.knightPosition;
+    const piece = (this.props.squareX === knightX && this.props.squareY === knightY) ?
     <Piece /> : null;
   return piece;
 }
 
-const displayBishop = () => {
-  const [bishopX, bishopY] = bishopPosition;
-  const bishop = (squareX === bishopX && squareY === bishopY) ? 
+displayBishop (){
+  const [bishopX, bishopY] = this.props.bishopPosition;
+  const bishop = (this.props.squareX === bishopX && this.props.squareY === bishopY) ? 
   <Bishop /> : null;
   return bishop;
 }
 
+hoverSquare = event => {
+  const id = event.target.id
+  const piece = this.props.chessPiece
+  if (piece === 'knight') {
+    this.checkKnightMove(id)
+  } 
+}
 
+// checkKnightMove(id) {
+//   const arrayId = id.split("").map(Number)
+//   const [x, y] = arrayId;
+//   console.log(arrayId)
+//   const [knightX, knightY] = this.props.knightPosition;
+//   const moveX = Math.abs(x - knightX);
+//   const moveY = Math.abs(y - knightY);
+//    if((moveX === 2 && moveY === 1) || (moveX === 1 && moveY === 2) ){
+//     this.setState({validMove: [x, y]})
+//     console.log(this.state.validMove)
+//      console.log('valid move')
+//      this.validColor(id)
+
+//     } else {
+//      console.log('invalid move')
+//     }
+
+// }
+
+// validColor(id){
+
+// }
+
+ //onMouseOver = {this.hoverSquare}>
+  render () {
+    const {squareColor, knightPosition, bishopPosition, squareX, squareY, setSquare, selectPiece, chessPiece} = this.props
   return (
 
     <div className = "Square">
-      <div className = {`oneSquare ${color}`}>
+      <div className = {`oneSquare ${this.checkColor()}`}>
         <div 
         className = "piece-container"
-        onClick={ () => setSquare(squareX, squareY)}>
-          {displayPiece()}
-          {displayBishop()}
+        id= {`${squareX}${squareY}`}
+        onClick={ () => setSquare(squareX, squareY)}>     
+          {this.displayPiece()}
+          {this.displayBishop()}
         </div>   
 
       </div>
     </div>
   );
+}
 };
 
 export default Square;

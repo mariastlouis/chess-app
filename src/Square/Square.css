@@ -3,11 +3,20 @@
   width: 100%;
   border: 1px solid black; }
 
+.piece-container:hover {
+  background: green; }
+
 .gray {
   background-color: gray; }
 
 .white {
   background-color: white; }
+
+.green:hover {
+  background-color: green; }
+
+.red:hover {
+  background-color: red; }
 
 .piece-container {
   height: 100px;

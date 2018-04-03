@@ -16,13 +16,13 @@ const ControlPanel = ({message, chessPiece}) => {
     } else if (chessPiece === 'bishop') {
       return 'Bishop selected'
     } else {
-      return 'Select a piece'
+      return ''
     }
   }
 
   return (
     <div className = "ControlPanel">
-      <h1>{selectedPieceMessage()} </h1>
+      <h2>{selectedPieceMessage()} </h2>
       <h2> {message} </h2>
     </div>
   );
